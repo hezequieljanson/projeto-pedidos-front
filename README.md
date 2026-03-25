@@ -18,7 +18,7 @@ GitHub Actions → CI (testes + build) → CD (Render webhook + Vercel auto-depl
 
 | Camada    | Tecnologia                           | Hospedagem |
 |-----------|--------------------------------------|------------|
-| Frontend  | Angular 21, SSR, Zoneless, Tailwind CSS v4, SCSS | Vercel |
+| Frontend  | Angular 21, SSR, Zoneless, SCSS | Vercel |
 | Backend   | Node.js 22, Express, Swagger/OpenAPI | Render (Docker) |
 | Banco     | PostgreSQL via Supabase              | Supabase Cloud |
 | Auth      | Supabase Auth (JWT)                  | Supabase Cloud |
