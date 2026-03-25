@@ -1,12 +1,12 @@
 import { Injectable, inject, signal } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Order, CartItem, Product } from '../models';
-import { environment } from '../../../environments/environment';
+import { apiBase } from './api-url.service';
 
 @Injectable({ providedIn: 'root' })
 export class OrderService {
   private http = inject(HttpClient);
-  private base = `${environment.apiUrl}/api/orders`;
+  private base = `${apiBase}/orders`;
 
   // Cart state
   private _cart = signal<CartItem[]>([]);

@@ -5,7 +5,7 @@ import { firstValueFrom } from 'rxjs';
 import { Session } from '@supabase/supabase-js';
 import { SupabaseService } from './supabase.service';
 import { Profile } from '../models';
-import { environment } from '../../../environments/environment';
+import { apiBase } from './api-url.service';
 
 @Injectable({ providedIn: 'root' })
 export class AuthService implements OnDestroy {
@@ -49,7 +49,7 @@ export class AuthService implements OnDestroy {
   private async loadProfile() {
     try {
       const profile = await firstValueFrom(
-        this.http.get<{ profile: Profile }>(`${environment.apiUrl}/api/me`)
+        this.http.get<{ profile: Profile }>(`${apiBase}/me`)
       );
       this._profile.set(profile.profile);
     } catch {

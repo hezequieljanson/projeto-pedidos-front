@@ -1,7 +1,7 @@
 import { Injectable, inject } from '@angular/core';
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { Product } from '../models';
-import { environment } from '../../../environments/environment';
+import { apiBase } from './api-url.service';
 
 export interface ProductFilters {
   category?: string;
@@ -13,7 +13,7 @@ export interface ProductFilters {
 @Injectable({ providedIn: 'root' })
 export class ProductService {
   private http = inject(HttpClient);
-  private base = `${environment.apiUrl}/api/products`;
+  private base = `${apiBase}/products`;
 
   getProducts(filters: ProductFilters = {}) {
     let params = new HttpParams();
