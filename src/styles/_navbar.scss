@@ -1,0 +1,65 @@
+@use 'tokens' as *;
+
+.navbar {
+  background-color: $color-primary;
+  color: $white;
+  box-shadow: $shadow-lg;
+
+  &__container {
+    max-width: 80rem;
+    margin-inline: auto;
+    padding-inline: $sp-4;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 4rem;
+  }
+
+  &__brand {
+    font-size: $text-xl;
+    font-weight: 700;
+    letter-spacing: -0.025em;
+    color: $white;
+
+    &:hover {
+      color: $white;
+    }
+  }
+
+  &__links {
+    display: flex;
+    align-items: center;
+    gap: $sp-6;
+    font-size: $text-sm;
+    font-weight: 500;
+  }
+
+  &__link {
+    color: $white;
+    transition: color $transition;
+    position: relative;
+
+    &:hover {
+      color: #c7d2fe; // indigo-200
+    }
+
+    &.is-active {
+      text-decoration: underline;
+    }
+  }
+
+  &__badge {
+    position: absolute;
+    top: -0.5rem;
+    right: -0.75rem;
+    background-color: #ef4444; // red-500
+    color: $white;
+    font-size: 0.625rem;
+    border-radius: $radius-full;
+    width: 1.25rem;
+    height: 1.25rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}

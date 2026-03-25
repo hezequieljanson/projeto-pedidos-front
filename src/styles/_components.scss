@@ -1,0 +1,206 @@
+@use 'tokens' as *;
+
+// ─── Cards ────────────────────────────────────────────────────────────────────
+.card {
+  background-color: $white;
+  border-radius: $radius-md;
+  box-shadow: $shadow-sm;
+  overflow: hidden;
+}
+
+.card--lg {
+  background-color: $white;
+  border-radius: $radius-lg;
+  box-shadow: $shadow-md;
+  overflow: hidden;
+}
+
+// ─── Empty state ─────────────────────────────────────────────────────────────
+.empty-state {
+  background-color: $white;
+  border-radius: $radius-lg;
+  box-shadow: $shadow-sm;
+  padding: $sp-12;
+  text-align: center;
+
+  &__icon {
+    font-size: 2.5rem;
+    margin-bottom: $sp-4;
+  }
+
+  &__text {
+    color: $gray-500;
+    margin-bottom: $sp-4;
+  }
+}
+
+// ─── Skeleton / loading pulse ─────────────────────────────────────────────────
+.skeleton {
+  background-color: $white;
+  border-radius: $radius-md;
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+// ─── Auth page ────────────────────────────────────────────────────────────────
+.auth-page {
+  min-height: 80vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.auth-card {
+  background-color: $white;
+  border-radius: $radius-lg;
+  box-shadow: $shadow-lg;
+  padding: $sp-8;
+  width: 100%;
+  max-width: 28rem;
+
+  &__title {
+    font-size: $text-2xl;
+    font-weight: 700;
+    color: $gray-900;
+    margin-bottom: $sp-6;
+  }
+
+  &__footer {
+    margin-top: $sp-4;
+    text-align: center;
+    font-size: $text-sm;
+    color: $gray-600;
+  }
+}
+
+.link {
+  color: $color-primary;
+  font-weight: 500;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+.back-link {
+  display: inline-flex;
+  align-items: center;
+  color: $color-primary;
+  font-size: $text-sm;
+  margin-bottom: $sp-6;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+// ─── Admin header ─────────────────────────────────────────────────────────────
+.admin-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: $sp-6;
+
+  &__title {
+    font-size: $text-2xl;
+    font-weight: 700;
+    color: $gray-900;
+  }
+
+  &__sub {
+    font-size: $text-sm;
+    color: $color-primary;
+    margin-top: $sp-1;
+    display: inline-block;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+// ─── Data table ───────────────────────────────────────────────────────────────
+.table-container {
+  background-color: $white;
+  border-radius: $radius-md;
+  box-shadow: $shadow-sm;
+  overflow: hidden;
+}
+
+.data-table {
+  width: 100%;
+  font-size: $text-sm;
+  border-collapse: collapse;
+
+  thead {
+    background-color: $gray-50;
+
+    th {
+      padding: $sp-3 $sp-4;
+      font-size: $text-xs;
+      font-weight: 500;
+      color: $gray-500;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      text-align: left;
+
+      &.text-right { text-align: right; }
+      &.text-center { text-align: center; }
+    }
+  }
+
+  tbody {
+    tr {
+      border-top: 1px solid $gray-100;
+
+      &:hover {
+        background-color: $gray-50;
+      }
+    }
+
+    td {
+      padding: $sp-3 $sp-4;
+      color: $gray-700;
+
+      &.text-right  { text-align: right; }
+      &.text-center { text-align: center; }
+      &.font-medium { font-weight: 500; color: $gray-900; }
+      &.font-mono   { font-family: ui-monospace, monospace; font-size: $text-xs; color: $gray-500; }
+    }
+  }
+}
+
+.text--success { color: $color-success; }
+.text--danger  { color: $color-danger; }
+
+// ─── Modal ────────────────────────────────────────────────────────────────────
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background-color: rgb(0 0 0 / 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 50;
+  padding: $sp-4;
+}
+
+.modal {
+  background-color: $white;
+  border-radius: $radius-lg;
+  padding: $sp-6;
+  width: 100%;
+  max-width: 32rem;
+
+  &__title {
+    font-size: $text-xl;
+    font-weight: 700;
+    margin-bottom: $sp-4;
+    color: $gray-900;
+  }
+
+  &__actions {
+    display: flex;
+    gap: $sp-3;
+    padding-top: $sp-2;
+  }
+}

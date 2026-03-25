@@ -1,0 +1,101 @@
+@use 'tokens' as *;
+
+// ─── Form structure ───────────────────────────────────────────────────────────
+.form__group {
+  display: flex;
+  flex-direction: column;
+  gap: $sp-4;
+}
+
+.form__field {
+  display: flex;
+  flex-direction: column;
+}
+
+.form__row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: $sp-3;
+}
+
+.form__label {
+  display: block;
+  font-size: $text-sm;
+  font-weight: 500;
+  color: $gray-700;
+  margin-bottom: $sp-1;
+}
+
+.form__label--xs {
+  display: block;
+  font-size: $text-xs;
+  font-weight: 500;
+  color: $gray-600;
+  margin-bottom: $sp-1;
+}
+
+// ─── Inputs ───────────────────────────────────────────────────────────────────
+%input-base {
+  width: 100%;
+  border: 1px solid $gray-300;
+  border-radius: $radius-sm;
+  padding: $sp-2 $sp-3;
+  font-size: $text-sm;
+  color: $gray-900;
+  background-color: $white;
+  transition: border-color $transition, box-shadow $transition;
+  outline: none;
+
+  &::placeholder {
+    color: $gray-400;
+  }
+
+  &:focus {
+    border-color: $color-primary;
+    box-shadow: 0 0 0 3px rgb(99 102 241 / 0.15);
+  }
+}
+
+.form__input {
+  @extend %input-base;
+}
+
+.form__select {
+  @extend %input-base;
+  width: auto;
+}
+
+.form__select--full {
+  @extend %input-base;
+}
+
+.form__input--sm {
+  @extend %input-base;
+  width: 7rem;
+}
+
+textarea.form__input {
+  resize: vertical;
+  min-height: 5rem;
+}
+
+// ─── Alerts ───────────────────────────────────────────────────────────────────
+.alert {
+  padding: $sp-3;
+  border-radius: $radius-sm;
+  font-size: $text-sm;
+  margin-bottom: $sp-4;
+  border: 1px solid;
+
+  &--error {
+    background-color: $color-danger-bg;
+    border-color: $color-danger-border;
+    color: $color-danger-text;
+  }
+
+  &--success {
+    background-color: $color-success-bg;
+    border-color: $color-success-border;
+    color: $color-success-text;
+  }
+}

@@ -1,0 +1,40 @@
+@use 'tokens' as *;
+
+.page-container {
+  max-width: 80rem;
+  margin-inline: auto;
+  padding: $sp-8 $sp-4;
+}
+
+.page-narrow {
+  max-width: 42rem;
+  margin-inline: auto;
+}
+
+.page-header {
+  margin-bottom: $sp-6;
+
+  &__title {
+    font-size: $text-3xl;
+    font-weight: 700;
+    color: $gray-900;
+    margin-bottom: $sp-2;
+  }
+
+  &__subtitle {
+    color: $gray-500;
+  }
+}
+
+// Flex helpers used broadly
+.flex-between {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

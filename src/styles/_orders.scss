@@ -1,0 +1,208 @@
+@use 'tokens' as *;
+
+// ─── Order history list ───────────────────────────────────────────────────────
+.order-list {
+  display: flex;
+  flex-direction: column;
+  gap: $sp-3;
+}
+
+.order-card {
+  display: block;
+  background-color: $white;
+  border-radius: $radius-md;
+  box-shadow: $shadow-sm;
+  padding: $sp-5;
+  transition: box-shadow $transition;
+  color: inherit;
+
+  &:hover {
+    box-shadow: $shadow-md;
+  }
+
+  &__layout {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__id {
+    font-size: $text-xs;
+    color: $gray-400;
+    font-family: ui-monospace, monospace;
+    margin-bottom: $sp-1;
+  }
+
+  &__total {
+    font-weight: 600;
+    color: $gray-900;
+  }
+
+  &__date {
+    font-size: $text-xs;
+    color: $gray-500;
+    margin-top: $sp-1;
+  }
+
+  &__meta {
+    display: flex;
+    align-items: center;
+    gap: $sp-3;
+  }
+
+  &__count {
+    font-size: $text-sm;
+    color: $gray-500;
+  }
+
+  &__arrow {
+    color: $gray-400;
+  }
+}
+
+// ─── Order detail ─────────────────────────────────────────────────────────────
+.order-detail {
+  background-color: $white;
+  border-radius: $radius-lg;
+  box-shadow: $shadow-md;
+  padding: $sp-6;
+
+  &__header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    margin-bottom: $sp-6;
+  }
+
+  &__id {
+    font-size: $text-xs;
+    color: $gray-400;
+    font-family: ui-monospace, monospace;
+    margin-bottom: $sp-1;
+  }
+
+  &__date {
+    font-size: $text-xs;
+    color: $gray-500;
+  }
+}
+
+// ─── Status timeline ──────────────────────────────────────────────────────────
+.timeline {
+  display: flex;
+  align-items: center;
+  gap: $sp-1;
+  margin-bottom: $sp-6;
+  overflow-x: auto;
+  padding-bottom: $sp-2;
+}
+
+.timeline__step {
+  display: flex;
+  align-items: center;
+  gap: $sp-1;
+  flex-shrink: 0;
+}
+
+.timeline__node {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.timeline__dot {
+  width: 1.75rem;
+  height: 1.75rem;
+  border-radius: $radius-full;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: $text-xs;
+  font-weight: 700;
+
+  &--active {
+    background-color: $color-primary;
+    color: $white;
+  }
+
+  &--inactive {
+    background-color: $gray-200;
+    color: $gray-400;
+  }
+}
+
+.timeline__label {
+  font-size: $text-xs;
+  margin-top: $sp-1;
+  color: $gray-500;
+}
+
+.timeline__line {
+  width: 2rem;
+  height: 2px;
+  margin-bottom: 1.25rem;
+
+  &--active   { background-color: $color-primary; }
+  &--inactive { background-color: $gray-200; }
+}
+
+// ─── Order items ─────────────────────────────────────────────────────────────
+.order-items-title {
+  font-weight: 600;
+  color: $gray-700;
+  margin-bottom: $sp-3;
+}
+
+.order-items {
+  display: flex;
+  flex-direction: column;
+  gap: $sp-3;
+  margin-bottom: $sp-6;
+}
+
+.order-item {
+  display: flex;
+  align-items: center;
+  gap: $sp-3;
+  padding: $sp-3;
+  background-color: $gray-50;
+  border-radius: $radius-sm;
+
+  &__img {
+    width: 3rem;
+    height: 3rem;
+    object-fit: cover;
+    border-radius: $radius-sm;
+    flex-shrink: 0;
+  }
+
+  &__info {
+    flex: 1;
+  }
+
+  &__name {
+    font-size: $text-sm;
+    font-weight: 500;
+    color: $gray-900;
+  }
+
+  &__qty {
+    font-size: $text-xs;
+    color: $gray-500;
+  }
+
+  &__total {
+    font-weight: 600;
+    color: $gray-900;
+  }
+}
+
+.order-footer {
+  border-top: 1px solid $gray-200;
+  padding-top: $sp-4;
+  display: flex;
+  justify-content: space-between;
+  font-weight: 700;
+  font-size: $text-lg;
+  color: $gray-900;
+}

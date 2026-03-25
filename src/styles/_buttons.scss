@@ -1,0 +1,159 @@
+@use 'tokens' as *;
+
+// ─── Base ─────────────────────────────────────────────────────────────────────
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  border-radius: $radius-sm;
+  transition: background-color $transition, color $transition, opacity $transition;
+  text-decoration: none;
+
+  &:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+  }
+}
+
+// ─── Primary (full-width, default form button) ────────────────────────────────
+.btn--primary {
+  @extend .btn;
+  width: 100%;
+  background-color: $color-primary;
+  color: $white;
+  padding: 0.625rem $sp-4;
+  font-size: $text-base;
+
+  &:hover:not(:disabled) {
+    background-color: $color-primary-dark;
+  }
+}
+
+// ─── Primary small (product card, inline) ─────────────────────────────────────
+.btn--primary-sm {
+  @extend .btn;
+  width: 100%;
+  background-color: $color-primary;
+  color: $white;
+  padding: $sp-2 $sp-4;
+  font-size: $text-sm;
+  font-weight: 500;
+
+  &:hover:not(:disabled) {
+    background-color: $color-primary-dark;
+  }
+
+  &:disabled {
+    cursor: not-allowed;
+  }
+}
+
+// ─── Product detail add-to-cart (larger) ──────────────────────────────────────
+.btn--primary-lg {
+  @extend .btn;
+  flex: 1;
+  background-color: $color-primary;
+  color: $white;
+  padding: $sp-3 $sp-4;
+  font-size: $text-base;
+  border-radius: $radius-md;
+
+  &:hover:not(:disabled) {
+    background-color: $color-primary-dark;
+  }
+}
+
+// ─── Secondary / outlined ─────────────────────────────────────────────────────
+.btn--secondary {
+  @extend .btn;
+  flex: 1;
+  background-color: $white;
+  color: $gray-700;
+  padding: $sp-2 $sp-4;
+  font-size: $text-sm;
+  font-weight: 500;
+  border: 1px solid $gray-300;
+
+  &:hover:not(:disabled) {
+    background-color: $gray-50;
+  }
+}
+
+// ─── Navbar buttons ───────────────────────────────────────────────────────────
+.btn--nav {
+  @extend .btn;
+  background-color: $color-primary-dark;
+  color: $white;
+  padding: $sp-1 + 0.125rem $sp-4;
+  font-weight: 500;
+  font-size: $text-sm;
+
+  &:hover:not(:disabled) {
+    background-color: $color-primary-darker;
+  }
+}
+
+.btn--nav-outline {
+  @extend .btn;
+  background-color: $white;
+  color: $color-primary;
+  padding: $sp-1 + 0.125rem $sp-4;
+  font-weight: 600;
+  font-size: $text-sm;
+
+  &:hover:not(:disabled) {
+    background-color: $color-primary-hover-bg;
+  }
+}
+
+// ─── Icon / circle (qty controls) ────────────────────────────────────────────
+.btn--icon {
+  width: 2rem;
+  height: 2rem;
+  border-radius: $radius-full;
+  background-color: $gray-100;
+  color: $gray-700;
+  font-weight: 700;
+  font-size: $text-base;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color $transition;
+
+  &:hover:not(:disabled) {
+    background-color: $gray-200;
+  }
+
+  &:disabled {
+    opacity: 0.4;
+  }
+}
+
+// ─── Text links ───────────────────────────────────────────────────────────────
+.btn--link {
+  background: none;
+  color: $color-primary;
+  font-size: $text-sm;
+  font-weight: 500;
+  padding: 0;
+  border-radius: 0;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+.btn--link-danger {
+  background: none;
+  color: #ef4444;
+  font-size: $text-sm;
+  font-weight: 500;
+  padding: 0;
+  border-radius: 0;
+
+  &:hover {
+    color: $color-danger;
+    text-decoration: underline;
+  }
+}
