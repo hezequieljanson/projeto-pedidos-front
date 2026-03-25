@@ -1,6 +1,6 @@
 # ShopCloud — Sistema de Pedidos
 
-Aplicação web escalável baseada em nuvem desenvolvida como Atividade Final do curso ADS/IA (EAD – Unifor).
+Aplicação web escalável baseada em nuvem desenvolvida como Atividade Final do curso ADS (EAD – Unifor).
 
 ## Arquitetura
 
@@ -185,8 +185,4 @@ projeto-pedidos/
 
 ---
 
-*Atividade Final — Desenvolvimento de Software em Nuvem — ADS/IA EAD Unifor*
-
-
-
-scQ6buCJ36x5WHdE
+*Atividade Final — Desenvolvimento de Software em Nuvem — ADS EAD Unifor*
